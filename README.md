@@ -2,95 +2,115 @@
 ![develop](https://github.com/m0xfff/rdydev/actions/workflows/rspec.yml/badge.svg?branch=develop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
-Welcome to our Rails onboarding project! This project was created to help developers build skills with the tools & the software development lifecycle they'll be using in their role. In this project, you'll be building your own student management system. The project has been divided into **issues**, issues are what we use to track progress and divide work among team members.
+Welcome to the `rdydev` project! This project aims to familiarize developers with the systems and procedures we use. This repository provides you with a sandbox to learn and experiment with our technology stack.
 
-Each issue should provide some **background** on why it is important & what the desired outcome is, it should outline the specific **requirements** of the issue i.e. the work to be done, & finally the specific **acceptance criteria** that needs to be met in order for the issue to be considered complete.
+## Table of Contents
 
-## Table of contents
-
+- [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
-- [Getting started](#getting-started)
-  - [Configuration](#configuration)
-  - [Opening the project in Github Codespaces](#opening-the-project-in-github-codespaces)
-    - [with Visual Studio Code on Desktop](#with-visual-studio-code-on-desktop)
-- [Working in the project](#working-in-the-project)
-  - [Github Actions](#github-actions)
+- [Installation](#installation)
+  - [Dev Containers](#dev-containers)
+- [Forking the Repository](#forking-the-repository)
+- [Issues](#issues)
+  - [Understanding Issues](#understanding-issues)
+- [Software Development Lifecycle](#software-development-lifecycle)
+  - [Feature Flags vs. Feature Branches](#feature-flags-vs-feature-branches)
+- [Contributing](#contributing)
+- [Resources](#resources)
+- [Support](#support)
+- [License](#license)
+
+## Getting Started
+
+To start working on this project, you'll need to set up your development environment. This guide will walk you through using dev containers.
 
 ## Prerequisites
 
-Before you begin working on the onboarding project, you will need to have the following:
+Before you start, please ensure you have the following installed:
 
-- An SSH key: You will need to have created an SSH key and added it to your Github account. If you haven't done this yet, you can [follow these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) to generate a new SSH key and add it to your Github account.
-- A signing key: You will also need to have configured a signing key for the purpose of signing your commits. If you haven't done this yet, you can [follow these instructions](https://docs.github.com/en/authentication/managing-commit-signature-verification) to generate a new GPG key and configure it for use with Github.
+-   [Git](https://git-scm.com/)
+-   [Docker](https://www.docker.com/) 
 
-Once you have completed these steps, you are ready to begin!
+Additionally, please ensure you have performed the following:
 
-## Getting started
+- Create an SSH key: Follow the instructions in the [GitHub guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to create and add your SSH key to your GitHub account.
+- Create a signing key: Follow the instructions in the [GitHub guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) to create and add your GPG key to your GitHub account.
 
-To get started, you will need to [fork the repository to your own Github account](https://github.com/m0xfff/rdydev/fork).
+## Installation
 
-### Configuration
+### Dev Containers
 
-Having successfully forked the repository, click on the *Settings* tab and scroll to the *Pull Requests* section. Ensure the options *Allow merge commits*, & *Allow rebase merging* are un-checked. The default commit message for *Allow squash merging* comes down to personal preference, I like *Default to pull request title & description*.
+The `rdydev` project supports development using dev containers, which allow you to work on the application from your own machine or in GitHub Codespaces. To get started, follow these steps:
 
-At the bottom of the *Pull Requests* section is an option labelled *Automatically delete head branches*, ensure this option is checked. When checked, branches will be deleted after they've been merged via a Pull Request.
+1.  Install [Docker](https://www.docker.com/) and [Visual Studio Code](https://code.visualstudio.com/).
+2.  Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for Visual Studio Code.
+3.  Clone the `rdydev` repository: `git clone https://github.com/m0xfff/rdydev.git`
+4.  Open the cloned `rdydev` folder in Visual Studio Code.
+5.  Press `F1`, type `Remote-Containers: Reopen in Container`, and press `Enter`.
 
-Finally, you'll want to add your mentor as a contributor to your repository. From the *Settings* tab, click the *Collaborators* item under *Access*. From the Collaborators page, add your mentor as a collaborator & grant them the *Write* role.
+Visual Studio Code will then build the dev container and open the project within it. You can now start working on the application. Alternatively, you can develop in Github Codespaces.
 
-### Opening the project in Github Codespaces
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=develop&repo=601419333)
 
-If you're looking for a quick and easy way to get up and running, you might want to consider opening the project in Github Codespaces. Codespaces is a cloud-based development environment that allows you to quickly spin up a fully-configured development environment without having to install any software on your local machine.
+## Forking the Repository
 
-To open the project in Github Codespaces, simply click the "Code" button in the upper right corner of the repository page and select *Create codespace on develop*. This will open the project in a Codespace, where you can start working on it right away.
+To get started, fork the repository by clicking the "Fork" button in the top-right corner of the GitHub page. This will create a copy of the repository under your GitHub account, where you can make changes and submit pull requests.
 
-One of the great things about using Codespaces is that everything is already set up for you, so you don't have to worry about configuring your development environment or installing any software. You can simply start coding and get up to speed quickly.
+## Issues
 
-We highly recommend using Github Codespaces to get started, especially if you're new to Ruby on Rails or if you're just getting started with software development. It's an easy and hassle-free way to get up and running quickly, so you can start learning and building right away!
+Upon forking the repository, the GitHub issue tracker should include some issues that are ready to go. Pick an issue you'd like to work on, create a new branch for that issue, and start coding. When you're ready, submit a pull request to the original `rdydev` repository.
 
-#### with Visual Studio Code on Desktop
+### Understanding Issues
 
-By default, Github Codespaces will open an IDE for you in a browser tab. This is a convenient feature to be sure, but it isn't for everyone. Luckily, you can open your Codespace in Visual Studio Code on desktop, all you need is the Codespaces extension installed on your local. You aren't limited to just vscode either, you can open a Codespace with a number of other tools.
+An "issue" is a unit of work that represents a task, bug, or feature in the project. Each issue includes the following sections:
 
-Additionally, you aren't limited to running the project from Codespaces either, the underlying technology Codespaces is using is called *devcontainers*, and there's nothing stopping you from running devcontainers locally if you would prefer.
+-   **Background:** Provides context and information about the issue.
+-   **Requirements:** Specifies what needs to be done in order to resolve the issue.
+-   **Acceptance Criteria:** Defines the conditions that must be met for the issue to be considered complete.
 
-Hopefully, you've been able to open a development environment without issue & are able to pick up your first issue! Unfortunately accidents do happen, and if you do run into problems as you set things up then don't hesitate to send your mentor a slack.
+Issues also have attributes like "weight" and "priority" that help us estimate the effort required and decide which tasks to tackle first.
 
-## Working in the project
+## Software Development Lifecycle
 
-To begin work on the project, you need to pick an issue to work on and create a new branch off the `develop` branch using the corresponding issue number at the start of the branch's name. The issues are written as markdown files & can be found in `docs/issues`, the filename of the issue is the issues number
+Our development process follows the Software Development Lifecycle (SDLC), which consists of the following steps:
 
-To create a new branch off the develop branch using the issue number in the branch name, you can use the following git command:
+1.  **Sprint Planning:** At the beginning of each sprint, the development team reviews and estimates the effort required for each issue by assigning "weights."
+2.  **Committing to Work:** The team decides which issues to commit to the sprint based on priority and available resources.
+3.  **Developing Features:** We use a trunk-based development workflow, merging work into the `develop` branch as soon as the acceptance criteria are met. Feature flags are used to disable incomplete features.
+4.  **Review and Feedback:** Completed work is reviewed and feedback is provided for improvement.
+5.  **Deployment:** Once all the issues in the sprint are completed, the new features and bug fixes are deployed.
 
-```
-git checkout -b SMS-<issue-number>-<branch-name> develop
-```
+Here's a quick overview of the `git` commands used throughout the SDLC:
 
-This command creates a new branch off the develop branch with the specified name (which includes the issue number and a branch name of your choice), and checks out that branch so you can start making changes.
+-   `git clone`: Clone the repository to your local machine.
+-   `git checkout -b your-branch-name`: Create a new branch for your feature.
+-   `git add .`: Stage all changes for commit.
+-   `git commit -m "Your commit message"`: Commit your changes with a descriptive message.
+-   `git push -u origin your-branch-name`: Push your changes to the remote repository.
+-   Open a pull request on GitHub to merge your changes into the `develop` branch.
 
-Once you've made changes to the code, you can add those changes to the staging area & commit the files with a message starting with the issue number and a subsequent description of changes, using the following git command:
+### Feature Flags vs. Feature Branches
 
-```
-git add <filename> # adds the specified file to the staging area, so it will be included in the next commit.
+Feature flags are a way to enable or disable features in a codebase without modifying the code. They provide some advantages over feature branches:
 
-git commit -m "SMS-<issue-number> <description of changes>" # creates a new commit with a message
-```
+-   **Faster Integration:** With feature flags, you can merge work into the `develop` branch as soon as it meets the acceptance criteria, which reduces integration conflicts.
+-   **Easier Testing:** Feature flags allow you to test features in isolation or combination without needing to manage multiple branches.
+-   **Gradual Rollout:** You can enable or disable features for specific users or environments, making it easier to roll out new features gradually.
 
-Once you're ready to publish your changes to the remote repository (called origin, by default), you can use the following git command:
+However, there are also some disadvantages:
 
-```
-git push -u origin SMS-<issue-number>-<branch-name>
-```
+-   **Increased Complexity:** Managing feature flags can add complexity to the codebase and require additional maintenance.
+-   **Potential Technical Debt:** Unused feature flags or poorly managed flags can lead to technical debt.
 
-> The -u (or --set-upstream) option is used to set the upstream branch for the local branch. When you run git push with the -u option, Git will set the remote branch to track the local branch you're pushing. This means that in the future, you can simply run git push without any additional arguments, and Git will know which branch to push to.
+## Contributing
 
-This command publishes the branch to the remote repository, Github, where you can create a Pull Request and have your mentor review your changes.
+We appreciate your contributions to the `rdydev` project. To contribute, please follow the [forking workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow). Make sure to submit a pull request when your changes are ready for review.
 
-To create a Pull Request, you can navigate to the repository page and click the "Pull requests" tab. From there, you can create a new Pull Request and assign it to your mentor for review. Your mentor will then review your changes and provide feedback to help you improve your code.
+## Resources
 
-### Github Actions
+-   [Ruby on Rails Guides](https://guides.rubyonrails.org/v4.2/)
+-   [MySQL 8 Documentation](https://dev.mysql.com/doc/refman/8.0/en/)
 
-There are automated tests and checks that run on every Pull Request (PR) to the develop branch. These tests and checks are designed to catch common issues and errors in the code.
+## Support
 
-When you create a PR, Github Actions will run the project's RSpec tests to ensure that the code works as expected and passes all tests. It will also run the Pronto runners for brakeman, reek, flay, and standard ruby. Each of these runners checks for different things, such as potential security issues, code smells, duplication, and adherence to the project's code style guidelines. If any of these runners fail, the PR will not be able to be merged until the issues are resolved.
-
-By running these checks automatically on every PR, we can catch issues early on in the development process, before they make it into the codebase. This helps to ensure that the code is high-quality, maintainable, and adheres to best practices.
+If you have any questions or need assistance, please reach out to the team on [slack](https://readytech-group.slack.com/archives/C04TLUTS5QF) or contact the [maintainer](https://github.com/m0xfff).

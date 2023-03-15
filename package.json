@@ -7,6 +7,14 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "speedscope": "^1.15.0"
+    "@octokit/rest": "^19.0.7",
+    "speedscope": "^1.15.0",
+    "yargs": "^17.7.1"
+  },
+  "scripts": {
+    "create-issue-from-file": "node ./bin/create-issue-from-file.js"
+  },
+  "bin": {
+    "create-issue-from-file": "./bin/create-issue-from-file.js"
   }
 }
