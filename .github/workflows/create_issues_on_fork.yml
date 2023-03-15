@@ -1,0 +1,29 @@
+name: Create Issues on Fork
+
+on:
+  create:
+    types: [forked]
+
+jobs:
+  create_issues:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    
+    - run: npm ci
+    - run: npm install -g create-issue-from-file
+
+    - name: Create issues from markdown files
+      env:
+        GITHUB_TOKEN: "${{ github.token }}"
+      run: |
+        for file in $(find docs/issues -type f -iname "*.md"); do
+          create-issue-from-file --owner $GITHUB_REPOSITORY_OWNER --repo $GITHUB_REPOSITORY --file $file
+        done
