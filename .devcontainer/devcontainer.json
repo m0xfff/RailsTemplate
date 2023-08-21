@@ -1,63 +1,26 @@
-// For format details, see https://aka.ms/devcontainer.json.
 {
-  "name": "Ruby on Rails & MySQL",
+  "name": "rdydev",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
-  // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/ruby:1": { "version": "2.7.7" },
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
   },
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // This can be used to network with other containers or the host.
   "forwardPorts": [3000],
-
-  // A command string or list of command arguments to run on the host machine before the container is created.
-  // "initializeCommand": "",
-
-  // This command is the first of three (along with updateContentCommand and postCreateCommand)
-  // that finalizes container setup when a dev container is created. It and subsequent commands
-  // execute inside the container immediately after it has started for the first time.
-  "onCreateCommand": "gem install bundler -v 1.17.3",
-
-  // This command is the second of three that finalizes container setup when a dev container is
-  // created. It executes inside the container after onCreateCommand whenever new content is
-  // available in the source tree during the creation process. Will execute at least once, and 
-  // may also execute periodically to refresh cached or prebuilt containers.
-  // "updateContentCommand": "",
-
-  // This command is the last of three that finalizes container setup when a dev container is 
-  // created. It happens after updateContentCommand and once the dev container has been assigned
-  // to a user for the first time.
-  "postCreateCommand": "bundle install && wait-for-it db:3306 -t 30 && bundle e rake db:setup || echo \"MySQL server is unresponsive.\n\"",
-
-  // Use 'postStartCommand' to run commands after the container is started.
-  // "postStartCommand": "",
-
-  // A command to run each time a tool has successfully attached to the container.
-  // "postAttachCommand": "",
-
-  "waitFor": "postCreateCommand",
-
-  // Configure tool-specific properties.
+  "onCreateCommand": "bin/setup",
   "customizations": {
     "vscode": {
       "extensions": [
+        "eamodio.gitlens",
+        "Fooo.ruby-spec-runner",
+        "ms-vscode.live-server",
+        "ms-vsliveshare.vsliveshare",
         "mtxr.sqltools",
         "mtxr.sqltools-driver-mysql",
-        "eamodio.gitlens",
-        "connorshea.vscode-ruby-test-adapter",
         "testdouble.vscode-standard-ruby",
-        "GitHub.copilot",
-        "Shopify.ruby-lsp",
         "streetsidesoftware.code-spell-checker"
       ]
     }
   },
-
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   "remoteUser": "vscode"
 }
