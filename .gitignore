@@ -16,3 +16,5 @@
 !/coverage/.keep
 
 /node_modules
+
+Application Database.session.sql
