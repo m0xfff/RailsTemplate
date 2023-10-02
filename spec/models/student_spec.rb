@@ -11,7 +11,7 @@ RSpec.describe Student, type: :model do
     end
 
     context "with missing first_name" do
-      let(:student_without_first_name) { FactoryBot.build(:student, :without_first_name) }
+      let(:student_without_first_name) { FactoryBot.build(:student, first_name: nil) }
 
       it "is invalid" do
         expect(student_without_first_name).not_to be_valid
@@ -21,11 +21,19 @@ RSpec.describe Student, type: :model do
     # Add similar contexts for other attributes (last_name, email, birth_date, gender)
 
     context "with invalid email format" do
-      let(:student_with_invalid_email) { FactoryBot.build(:student, email: "invalid_email") }
+      let(:student_with_invalid_email) { FactoryBot.build(:student, email: "xyzemail") }
 
       it "is invalid" do
         expect(student_with_invalid_email).not_to be_valid
         expect(student_with_invalid_email.errors[:email]).to include("is invalid")
+      end
+    end
+
+    context "with valid email format" do
+      let(:student_with_valid_email) { FactoryBot.build(:student, email: "xyzemail@gmail.com") }
+
+      it "is valid" do
+        expect(student_with_valid_email).to be_valid
       end
     end
 

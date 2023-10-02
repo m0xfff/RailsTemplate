@@ -23,21 +23,5 @@ FactoryBot.define do
     trait :without_first_name do
       first_name { nil }
     end
-
-    trait :without_last_name do
-      last_name { nil }
-    end
-
-    trait :without_email do
-      email { nil }
-    end
-
-    trait :without_birth_date do
-      birth_date { nil }
-    end
-
-    trait :without_gender do
-      gender { nil }
-    end
   end
 end
