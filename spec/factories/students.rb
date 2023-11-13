@@ -18,10 +18,5 @@ FactoryBot.define do
     email { Faker::Internet.email }
     birth_date { Faker::Date.birthday(min_age: 18, max_age: 65) }
     gender { FAKE_GENDERS.sample }
-
-    # Adding traits in case of validations
-    trait :without_first_name do
-      first_name { nil }
-    end
   end
 end
