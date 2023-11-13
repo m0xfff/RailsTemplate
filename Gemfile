@@ -82,3 +82,9 @@ group :test do
 
   gem "shoulda-matchers", "~> 4.5.1"
 end
+
+# Twitter Bootstrap for Rails 4, 3.x Asset Pipeline
+gem "twitter-bootstrap-rails"
+
+# will_paginate gem
+gem "will_paginate", "~> 4.0"
