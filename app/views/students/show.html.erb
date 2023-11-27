@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Student Details</h1>
+
+  <p><strong>Name:</strong> <%= @student.full_name %></p>  
+  <p><strong>Gender:</strong> <%= @student.gender %></p>
+  <p><strong>Email:</strong> <%= @student.email %></p>
+  <p><strong>DOB:</strong> <%= @student.birth_date %></p>
+
+<%= link_to 'Back to Students List page', students_path %>  
+</div>
