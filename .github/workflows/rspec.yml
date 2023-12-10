@@ -1,5 +1,10 @@
 name: RSpec
-on: [push]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
 
 env:
   RAILS_ENV: test
