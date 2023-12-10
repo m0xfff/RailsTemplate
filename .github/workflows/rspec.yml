@@ -1,11 +1,10 @@
 name: RSpec
-on: 
+on:
   pull_request:
-    branches:
-      - '*'
   push:
     branches:
-      - '*'
+      - main
+      - develop
 
 env:
   RAILS_ENV: test

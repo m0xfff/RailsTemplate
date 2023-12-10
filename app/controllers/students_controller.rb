@@ -1,18 +1,17 @@
 class StudentsController < ApplicationController
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  DEFAULT_PER_PAGE = 10
   def index
-    @students = Student.paginate(page: params[:page], per_page: 10)
+    @students = Student.paginate(page: params[:page], per_page: DEFAULT_PER_PAGE)
   end
 
   def show
-    set_student
   end
 
   def edit
-    set_student
   end
 
   def update
-    set_student
     if @student.update(student_params)
       redirect_to @student, notice: "Student was successfully updated."
     else
@@ -21,7 +20,6 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    set_student
     @student.destroy
     redirect_to students_url, notice: "Student was successfully destroyed."
   end
